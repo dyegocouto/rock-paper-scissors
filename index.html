@@ -13,22 +13,22 @@
       <h1 class="title">Rock Paper Scissors</h1>
     </header>
     <main class="main">
-      <div class="display">
-        <h2 class="display-title">Make a move</h2>
-        <div class="display-info">First to score 5 points wins the game</div>
-        <div class="scoreboard">
+      <div class="scoreboard">
+        <h2 class="score-title">Make a move</h2>
+        <p class="score-message">First to score 5 points wins the game</p>
+        <div class="scores-container">
           <div class="score-box">
-            <div class="player-sign">?</div>
-            <div class="player-score">Player: 0</div>
+            <div id="player-sign" class="sign">?</div>
+            <p id="player-score" class="score">Player: 0</p>
           </div>
           <div class="score-box">
-            <div class="computer-sign">?</div>
-            <div class="computer-score">Computer: 0</div>
+            <div id="computer-sign" class="sign">?</div>
+            <p id="computer-score" class="score">Computer: 0</p>
           </div>
         </div>
       </div>
-      <div class="game-buttons">
-        <button class="btn rock">
+      <div class="buttons-container">
+        <button id="rock" class="btn">
           <img
             src="./images/closed-fist.png"
             alt="rock"
@@ -36,7 +36,7 @@
             height="100"
           />
         </button>
-        <button class="btn paper">
+        <button id="paper" class="btn">
           <img
             src="./images/palm-of-hand.png"
             alt="paper"
@@ -44,7 +44,7 @@
             height="100"
           />
         </button>
-        <button class="btn scissors">
+        <button id="scissors" class="btn">
           <img
             src="./images/peace.png"
             alt="scissors"
