@@ -1,0 +1,72 @@
+/* imports */
+
+@font-face {
+  font-family: "Caviar Dreams";
+  src: url("../fonts/CaviarDreams.woff2") format("woff2"),
+    url("../fonts/CaviarDreams.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Light.woff2") format("woff2"),
+    url("../fonts/Roboto-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: #fbfbfb;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 94%);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 30px;
+}
+
+.title {
+  margin: 0;
+  font-family: "Caviar Dreams";
+  font-size: calc(1.5rem + 1vw);
+}
+
+.main {
+  font-family: "Roboto";
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-title {
+  font-size: clamp(22px, 1.5rem + 1vw, 30px);
+  text-align: center;
+  font-weight: 400;
+}
+
+.score-message {
+  text-align: center;
+  font-size: 18px;
+}
+
+.scores-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign {
+  text-align: center;
+  font-size: 80px;
+}
+
+.score {
+  font-size: 22px;
+}
