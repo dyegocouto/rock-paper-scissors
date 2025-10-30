@@ -20,6 +20,7 @@
 
 body {
   background-color: #fbfbfb;
+  font-family: "Roboto";
 }
 
 .wrapper {
@@ -45,11 +46,11 @@ body {
 }
 
 .main {
-  font-family: "Roboto";
   margin-top: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
 }
 
 .score-title {
@@ -109,4 +110,22 @@ body {
 
 .btn:active {
   transform: scale(0.98);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.footer-logo {
+  margin-left: 5px;
+  width: 26px;
+  height: 26px;
+  transition: transform 0.3s linear;
+}
+
+.footer-logo:hover {
+  transform: rotate(360deg);
 }
