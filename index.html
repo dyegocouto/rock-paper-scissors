@@ -9,75 +9,61 @@
     <script defer src="js/script.js"></script>
   </head>
   <body>
-    <header class="header">
-      <h1 class="title">Rock Paper Scissors</h1>
-    </header>
-    <main class="main">
-      <div class="scoreboard">
-        <h2 class="score-title">Make a move</h2>
-        <p class="score-message">First to score 5 points wins the game</p>
-        <div class="scores-container">
-          <div class="score-box">
-            <div id="player-sign" class="sign">
-              <img
-                src="./images/question-mark.png"
-                alt="question mark"
-                width="80"
-                height="80"
-              />
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="title">Rock Paper Scissors</h1>
+      </header>
+      <main class="main">
+        <div class="scoreboard">
+          <h2 class="score-title">Make a move</h2>
+          <p class="score-message">First to score 5 points wins the game</p>
+          <div class="scores-container">
+            <div class="score-box">
+              <div id="player-sign" class="sign">
+                <img
+                  src="./images/question-mark.png"
+                  alt="question mark"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <p id="player-score" class="score">Player: 0</p>
             </div>
-            <p id="player-score" class="score">Player: 0</p>
-          </div>
-          <div class="score-box">
-            <div id="computer-sign" class="sign">
-              <img
-                src="./images/question-mark.png"
-                alt="question mark"
-                width="80"
-                height="80"
-              />
+            <div class="score-box">
+              <div id="computer-sign" class="sign">
+                <img
+                  src="./images/question-mark.png"
+                  alt="question mark"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <p id="computer-score" class="score">Computer: 0</p>
             </div>
-            <p id="computer-score" class="score">Computer: 0</p>
           </div>
         </div>
-      </div>
-      <div class="buttons-container">
-        <button id="rock" class="btn">
+        <div class="buttons-container">
+          <button id="rock" class="btn">
+            <img src="./images/rock.png" alt="rock" />
+          </button>
+          <button id="paper" class="btn">
+            <img src="./images/paper.png" alt="paper" />
+          </button>
+          <button id="scissors" class="btn">
+            <img src="./images/scissors.png" alt="scissors" />
+          </button>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer-text">Copyright &copy; 2025 dyegocouto</p>
+        <a href="https://github.com/dyegocouto" target="_blank">
           <img
-            src="./images/closed-fist.png"
-            alt="rock"
-            width="100"
-            height="100"
+            class="footer-logo"
+            src="./images/github-mark.svg"
+            alt="github logo"
           />
-        </button>
-        <button id="paper" class="btn">
-          <img
-            src="./images/palm-of-hand.png"
-            alt="paper"
-            width="100"
-            height="100"
-          />
-        </button>
-        <button id="scissors" class="btn">
-          <img
-            src="./images/peace.png"
-            alt="scissors"
-            width="100"
-            height="100"
-          />
-        </button>
-      </div>
-    </main>
-    <footer class="footer">
-      <p>Copyright &copy; dyegocouto</p>
-      <a href="https://github.com/dyegocouto" target="_blank">
-        <img
-          src="./images/github-mark.svg"
-          alt="github logo"
-          width="20"
-          height="20"
-        />
-      </a>
-    </footer>
+        </a>
+      </footer>
+    </div>
   </body>
 </html>
