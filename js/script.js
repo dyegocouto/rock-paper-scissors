@@ -21,9 +21,6 @@ function playRound(playerChoice, computerChoice) {
     score.player++;
     roundWinner = "player";
   }
-
-  console.log("The round winner is the " + roundWinner);
-  console.log("Current score: " + JSON.stringify(score));
 }
 
 function updateSigns(playerChoice, computerChoice) {
