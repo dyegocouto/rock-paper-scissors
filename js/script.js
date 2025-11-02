@@ -1,3 +1,7 @@
+const buttonsContainer = document.querySelector(".buttons-container");
+const playerSign = document.querySelector("#player-sign");
+const computerSign = document.querySelector("#computer-sign");
+
 const score = { player: 0, computer: 0 };
 let roundWinner = "";
 
@@ -22,11 +26,38 @@ function playRound(playerChoice, computerChoice) {
   console.log("Current score: " + JSON.stringify(score));
 }
 
-function handleClick(e) {
-  const playerChoice = e.target.closest("button").id;
-  playRound(playerChoice, getComputerChoice());
+function updateSigns(playerChoice, computerChoice) {
+  switch (playerChoice) {
+    case "rock":
+      playerSign.src = "./images/rock.png";
+      break;
+    case "paper":
+      playerSign.src = "./images/paper.png";
+      break;
+    case "scissors":
+      playerSign.src = "./images/scissors.png";
+      break;
+  }
+
+  switch (computerChoice) {
+    case "rock":
+      computerSign.src = "./images/rock.png";
+      break;
+    case "paper":
+      computerSign.src = "./images/paper.png";
+      break;
+    case "scissors":
+      computerSign.src = "./images/scissors.png";
+      break;
+  }
 }
 
-const buttonsContainer = document.querySelector(".buttons-container");
+function handleClick(e) {
+  const playerChoice = e.target.closest("button").id;
+  const computerChoice = getComputerChoice();
+
+  playRound(playerChoice, computerChoice);
+  updateSigns(playerChoice, computerChoice);
+}
 
 buttonsContainer.addEventListener("click", handleClick);
