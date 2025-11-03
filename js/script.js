@@ -3,6 +3,8 @@ const scoreMessage = document.querySelector(".score-message");
 const buttonsContainer = document.querySelector(".buttons-container");
 const playerSign = document.querySelector("#player-sign");
 const computerSign = document.querySelector("#computer-sign");
+const playerScore = document.querySelector("#player-score");
+const computerScore = document.querySelector("#computer-score");
 
 const score = { player: 0, computer: 0 };
 let roundWinner = "";
@@ -57,7 +59,7 @@ function capitalizeFirstLetter(str) {
   return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
 }
 
-function updateScoreboard(playerChoice, computerChoice) {
+function updateScoreInfo(playerChoice, computerChoice) {
   switch (roundWinner) {
     case "tie":
       scoreTitle.textContent = "It's a tie!";
@@ -80,13 +82,19 @@ function updateScoreboard(playerChoice, computerChoice) {
   }
 }
 
+function updateScoreboard() {
+  playerScore.textContent = `Player: ${score.player}`;
+  computerScore.textContent = `Computer: ${score.computer}`;
+}
+
 function handleClick(e) {
   const playerChoice = e.target.closest("button").id;
   const computerChoice = getComputerChoice();
 
   playRound(playerChoice, computerChoice);
   updateSigns(playerChoice, computerChoice);
-  updateScoreboard(playerChoice, computerChoice);
+  updateScoreInfo(playerChoice, computerChoice);
+  updateScoreboard();
 }
 
 buttonsContainer.addEventListener("click", handleClick);
