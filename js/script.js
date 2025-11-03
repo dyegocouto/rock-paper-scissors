@@ -10,7 +10,9 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-  if (
+  if (playerChoice === computerChoice) {
+    roundWinner = "tie";
+  } else if (
     (playerChoice === "rock" && computerChoice === "paper") ||
     (playerChoice === "paper" && computerChoice === "scissors") ||
     (playerChoice === "scissors" && computerChoice === "rock")
