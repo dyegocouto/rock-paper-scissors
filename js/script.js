@@ -5,6 +5,7 @@ const playerSign = document.querySelector("#player-sign");
 const computerSign = document.querySelector("#computer-sign");
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
+const modal = document.querySelector(".modal");
 
 const score = { player: 0, computer: 0 };
 let roundWinner = "";
@@ -87,7 +88,17 @@ function updateScoreboard() {
   computerScore.textContent = `Computer: ${score.computer}`;
 }
 
+function endGame() {
+  modal.showModal();
+}
+
+function isGameOver() {
+  if (score.player >= 5 || score.computer >= 5) endGame();
+}
+
 function handleClick(e) {
+  isGameOver();
+
   const playerChoice = e.target.closest("button").id;
   const computerChoice = getComputerChoice();
 
