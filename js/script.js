@@ -6,6 +6,7 @@ const computerSign = document.querySelector("#computer-sign");
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
 const modal = document.querySelector(".modal");
+const modalButton = document.querySelector(".modal-button");
 
 const score = { player: 0, computer: 0 };
 let roundWinner = "";
@@ -108,4 +109,23 @@ function handleClick(e) {
   updateScoreboard();
 }
 
+function restartGame() {
+  score.player = 0;
+  score.computer = 0;
+  updateScoreboard();
+
+  scoreTitle.textContent = "Make a move";
+  scoreMessage.textContent = "First to score 5 points wins the game";
+
+  playerScore.textContent = "Player: 0";
+  computerScore.textContent = "Computer: 0";
+
+  playerSign.src = "./images/question-mark.png";
+  computerSign.src = "./images/question-mark.png";
+
+  modal.close();
+}
+
 buttonsContainer.addEventListener("click", handleClick);
+
+modalButton.addEventListener("click", restartGame);
