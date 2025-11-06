@@ -94,11 +94,14 @@ function endGame() {
 }
 
 function isGameOver() {
-  if (score.player >= 5 || score.computer >= 5) endGame();
+  return score.player >= 5 || score.computer >= 5;
 }
 
 function handleClick(e) {
-  isGameOver();
+  if (isGameOver()) {
+    endGame();
+    return;
+  }
 
   const playerChoice = e.target.closest("button").id;
   const computerChoice = getComputerChoice();
