@@ -78,8 +78,8 @@ function updateScoreInfo(playerChoice, computerChoice) {
     case "computer":
       scoreTitle.textContent = "You lose!";
       scoreMessage.textContent = `${capitalizeFirstLetter(
-        computerChoice
-      )} beats ${playerChoice}`;
+        playerChoice
+      )} is beaten by ${computerChoice}`;
       break;
   }
 }
