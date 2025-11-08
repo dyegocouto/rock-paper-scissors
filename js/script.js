@@ -9,6 +9,8 @@ const modal = document.querySelector(".modal");
 const modalButton = document.querySelector(".modal-button");
 const modalText = document.querySelector(".modal-text");
 
+const IMAGE_PATH = "./images/";
+
 const score = { player: 0, computer: 0 };
 let roundWinner = "";
 
@@ -32,30 +34,13 @@ function playRound(playerChoice, computerChoice) {
   }
 }
 
-function updateSigns(playerChoice, computerChoice) {
-  switch (playerChoice) {
-    case "rock":
-      playerSign.src = "./images/rock.png";
-      break;
-    case "paper":
-      playerSign.src = "./images/paper.png";
-      break;
-    case "scissors":
-      playerSign.src = "./images/scissors.png";
-      break;
-  }
+function setSignImage(element, choice) {
+  element.src = `${IMAGE_PATH}${choice}.png`;
+}
 
-  switch (computerChoice) {
-    case "rock":
-      computerSign.src = "./images/rock.png";
-      break;
-    case "paper":
-      computerSign.src = "./images/paper.png";
-      break;
-    case "scissors":
-      computerSign.src = "./images/scissors.png";
-      break;
-  }
+function updateSigns(playerChoice, computerChoice) {
+  setSignImage(playerSign, playerChoice);
+  setSignImage(computerSign, computerChoice);
 }
 
 function capitalizeFirstLetter(str) {
