@@ -103,19 +103,26 @@ function handleClick(e) {
   updateScoreboard();
 }
 
-function restartGame() {
+function resetScore() {
   score.player = 0;
   score.computer = 0;
   updateScoreboard();
+}
 
+function resetScoreInfo() {
   scoreTitle.textContent = "Make a move";
   scoreMessage.textContent = "First to score 5 points wins the game";
+}
 
-  playerScore.textContent = "Player: 0";
-  computerScore.textContent = "Computer: 0";
+function resetSigns() {
+  playerSign.src = `${IMAGE_PATH}question-mark.png`;
+  computerSign.src = `${IMAGE_PATH}question-mark.png`;
+}
 
-  playerSign.src = "./images/question-mark.png";
-  computerSign.src = "./images/question-mark.png";
+function restartGame() {
+  resetScore();
+  resetScoreInfo();
+  resetSigns();
 
   modal.close();
 }
