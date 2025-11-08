@@ -7,6 +7,7 @@ const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
 const modal = document.querySelector(".modal");
 const modalButton = document.querySelector(".modal-button");
+const modalText = document.querySelector(".modal-text");
 
 const score = { player: 0, computer: 0 };
 let roundWinner = "";
@@ -90,6 +91,11 @@ function updateScoreboard() {
 }
 
 function endGame() {
+  if (score.player > score.computer) {
+    modalText.textContent = "You won!";
+  } else {
+    modalText.textContent = "You lost...";
+  }
   modal.showModal();
 }
 
