@@ -1,17 +1,21 @@
-const scoreTitle = document.querySelector(".score-title");
-const scoreMessage = document.querySelector(".score-message");
-const buttonsContainer = document.querySelector(".buttons-container");
-const playerSign = document.querySelector("#player-sign");
-const computerSign = document.querySelector("#computer-sign");
+const displayTitle = document.querySelector(".display-title");
+const displayPara = document.querySelector(".display-para");
+
+const gameButtons = document.querySelector(".game-buttons");
+
+const playerIcon = document.querySelector("#player-icon");
+const computerIcon = document.querySelector("#computer-icon");
+
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
+
 const modal = document.querySelector(".modal");
-const modalButton = document.querySelector(".modal-button");
-const modalText = document.querySelector(".modal-text");
+const modalBtn = document.querySelector(".modal-button");
+const modalPara = document.querySelector(".modal-para");
 
 const IMAGE_PATH = "./images/";
 
-const score = { player: 0, computer: 0 };
+const internalScore = { player: 0, computer: 0 };
 let roundWinner = "";
 
 function getComputerChoice() {
@@ -26,44 +30,44 @@ function playRound(playerChoice, computerChoice) {
     (playerChoice === "paper" && computerChoice === "scissors") ||
     (playerChoice === "scissors" && computerChoice === "rock")
   ) {
-    score.computer++;
+    internalScore.computer++;
     roundWinner = "computer";
   } else {
-    score.player++;
+    internalScore.player++;
     roundWinner = "player";
   }
 }
 
-function setSignImage(element, choice) {
+function setIconImage(element, choice) {
   element.src = `${IMAGE_PATH}${choice}.png`;
 }
 
-function updateSigns(playerChoice, computerChoice) {
-  setSignImage(playerSign, playerChoice);
-  setSignImage(computerSign, computerChoice);
+function updateIcons(playerChoice, computerChoice) {
+  setIconImage(playerIcon, playerChoice);
+  setIconImage(computerIcon, computerChoice);
 }
 
 function capitalizeFirstLetter(str) {
   return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
 }
 
-function updateScoreInfo(playerChoice, computerChoice) {
+function updateDisplay(playerChoice, computerChoice) {
   switch (roundWinner) {
     case "tie":
-      scoreTitle.textContent = "It's a tie!";
-      scoreMessage.textContent = `${capitalizeFirstLetter(
+      displayTitle.textContent = "It's a tie!";
+      displayPara.textContent = `${capitalizeFirstLetter(
         playerChoice
       )} ties with ${computerChoice}`;
       break;
     case "player":
-      scoreTitle.textContent = "You win!";
-      scoreMessage.textContent = `${capitalizeFirstLetter(
+      displayTitle.textContent = "You win!";
+      displayPara.textContent = `${capitalizeFirstLetter(
         playerChoice
       )} beats ${computerChoice}`;
       break;
     case "computer":
-      scoreTitle.textContent = "You lose!";
-      scoreMessage.textContent = `${capitalizeFirstLetter(
+      displayTitle.textContent = "You lose!";
+      displayPara.textContent = `${capitalizeFirstLetter(
         playerChoice
       )} is beaten by ${computerChoice}`;
       break;
@@ -71,21 +75,21 @@ function updateScoreInfo(playerChoice, computerChoice) {
 }
 
 function updateScoreboard() {
-  playerScore.textContent = `Player: ${score.player}`;
-  computerScore.textContent = `Computer: ${score.computer}`;
+  playerScore.textContent = `Player: ${internalScore.player}`;
+  computerScore.textContent = `Computer: ${internalScore.computer}`;
 }
 
 function endGame() {
-  if (score.player > score.computer) {
-    modalText.textContent = "You won!";
+  if (internalScore.player > internalScore.computer) {
+    modalPara.textContent = "You won!";
   } else {
-    modalText.textContent = "You lost...";
+    modalPara.textContent = "You lost...";
   }
   modal.showModal();
 }
 
 function isGameOver() {
-  return score.player >= 5 || score.computer >= 5;
+  return internalScore.player >= 5 || internalScore.computer >= 5;
 }
 
 function handleClick(e) {
@@ -98,35 +102,35 @@ function handleClick(e) {
   const computerChoice = getComputerChoice();
 
   playRound(playerChoice, computerChoice);
-  updateSigns(playerChoice, computerChoice);
-  updateScoreInfo(playerChoice, computerChoice);
+  updateIcons(playerChoice, computerChoice);
+  updateDisplay(playerChoice, computerChoice);
   updateScoreboard();
 }
 
-function resetScore() {
-  score.player = 0;
-  score.computer = 0;
+function resetInternalScore() {
+  internalScore.player = 0;
+  internalScore.computer = 0;
   updateScoreboard();
 }
 
-function resetScoreInfo() {
-  scoreTitle.textContent = "Make a move";
-  scoreMessage.textContent = "First to score 5 points wins the game";
+function resetDisplay() {
+  displayTitle.textContent = "Make a move";
+  displayPara.textContent = "First to score 5 points wins the game";
 }
 
-function resetSigns() {
-  playerSign.src = `${IMAGE_PATH}question-mark.png`;
-  computerSign.src = `${IMAGE_PATH}question-mark.png`;
+function resetIcons() {
+  playerIcon.src = `${IMAGE_PATH}question-mark.png`;
+  computerIcon.src = `${IMAGE_PATH}question-mark.png`;
 }
 
 function restartGame() {
-  resetScore();
-  resetScoreInfo();
-  resetSigns();
+  resetInternalScore();
+  resetDisplay();
+  resetIcons();
 
   modal.close();
 }
 
-buttonsContainer.addEventListener("click", handleClick);
+gameButtons.addEventListener("click", handleClick);
 
-modalButton.addEventListener("click", restartGame);
+modalBtn.addEventListener("click", restartGame);

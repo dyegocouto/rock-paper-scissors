@@ -39,7 +39,7 @@ body {
   padding: 30px;
 }
 
-.title {
+.header-title {
   margin: 0;
   font-family: "Caviar Dreams";
   font-size: calc(1.5rem + 1vw);
@@ -53,18 +53,18 @@ body {
   flex: 1;
 }
 
-.score-title {
+.display-title {
   font-size: clamp(22px, 1.5rem + 1vw, 30px);
   text-align: center;
   font-weight: 400;
 }
 
-.score-message {
+.display-para {
   text-align: center;
   font-size: 18px;
 }
 
-.scores-container {
+.scoreboard {
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -86,7 +86,7 @@ body {
   font-size: 22px;
 }
 
-.buttons-container {
+.game-buttons {
   margin-top: 40px;
   display: flex;
   justify-content: space-around;
@@ -94,7 +94,7 @@ body {
   max-width: 450px;
 }
 
-.btn {
+.game-button {
   border: 1px solid hsl(0, 0%, 80%);
   background-color: hsl(0, 0%, 94%);
   border-radius: 10px;
@@ -105,17 +105,17 @@ body {
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.btn img {
+.game-button img {
   width: clamp(60px, 20vw, 100px);
   height: clamp(60px, 20vw, 100px);
 }
 
-.btn:hover {
+.game-button:hover {
   cursor: pointer;
   background-color: hsl(0, 0%, 92%);
 }
 
-.btn:active {
+.game-button:active {
   transform: scale(0.98);
 }
 
@@ -148,7 +148,7 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-text {
+.modal-para {
   font-size: 2rem;
 }
 

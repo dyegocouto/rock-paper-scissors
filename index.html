@@ -12,17 +12,17 @@
   <body>
     <div class="wrapper">
       <header class="header">
-        <h1 class="title">Rock Paper Scissors</h1>
+        <h1 class="header-title">Rock Paper Scissors</h1>
       </header>
       <main class="main">
-        <div class="scoreboard">
-          <h2 class="score-title">Make a move</h2>
-          <p class="score-message">First to score 5 points wins the game</p>
-          <div class="scores-container">
+        <div class="display">
+          <h2 class="display-title">Make a move</h2>
+          <p class="display-para">First to score 5 points wins the game</p>
+          <div class="scoreboard">
             <div class="score-box">
               <img
-                id="player-sign"
-                class="sign"
+                id="player-icon"
+                class="icon"
                 src="./images/question-mark.png"
                 alt="question mark"
                 width="80"
@@ -32,8 +32,8 @@
             </div>
             <div class="score-box">
               <img
-                id="computer-sign"
-                class="sign"
+                id="computer-icon"
+                class="icon"
                 src="./images/question-mark.png"
                 alt="question mark"
                 width="80"
@@ -43,20 +43,20 @@
             </div>
           </div>
         </div>
-        <div class="buttons-container">
-          <button id="rock" class="btn">
+        <div class="game-buttons">
+          <button id="rock" class="game-button">
             <img src="./images/rock.png" alt="rock" />
           </button>
-          <button id="paper" class="btn">
+          <button id="paper" class="game-button">
             <img src="./images/paper.png" alt="paper" />
           </button>
-          <button id="scissors" class="btn">
+          <button id="scissors" class="game-button">
             <img src="./images/scissors.png" alt="scissors" />
           </button>
         </div>
       </main>
       <footer class="footer">
-        <p class="footer-text">Created by dyegocouto</p>
+        <p class="footer-para">Created by dyegocouto</p>
         <a href="https://github.com/dyegocouto" target="_blank">
           <img
             class="footer-logo"
@@ -66,7 +66,7 @@
         </a>
       </footer>
       <dialog class="modal">
-        <p class="modal-text">Game over!</p>
+        <p class="modal-para">Game over!</p>
         <button class="modal-button">Restart</button>
       </dialog>
     </div>
