@@ -16,18 +16,22 @@ const internalScore = { player: 0, computer: 0 };
 let roundWinner = "";
 
 function getComputerChoice() {
-  return ["r", "p", "s"][Math.floor(Math.random() * 3)];
+  return ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
 }
 
 function playRound(playerChoice, computerChoice) {
-  const match = playerChoice + computerChoice;
-
   if (playerChoice === computerChoice) {
-    roundWinner === "tie";
-  } else if (match === "rs" || match === "pr" || match === "sp") {
-    roundWinner = "player";
+    roundWinner = "tie";
+  } else if (
+    (playerChoice === "rock" && computerChoice === "paper") ||
+    (playerChoice === "paper" && computerChoice === "scissors") ||
+    (playerChoice === "scissors" && computerChoice === "rock")
+  ) {
+    internalScore.computer++;
+    roundWinner = "computer";
   } else {
-    roundWinner === "computer";
+    internalScore.player++;
+    roundWinner = "player";
   }
 }
 
@@ -85,10 +89,6 @@ function isGameOver() {
   return internalScore.player >= 5 || internalScore.computer >= 5;
 }
 
-function updateInternalScore(winner) {
-  internalScore[winner]++;
-}
-
 function handleClick(e) {
   if (isGameOver()) {
     endGame();
@@ -97,9 +97,8 @@ function handleClick(e) {
 
   const playerChoice = e.target.closest("button").id;
   const computerChoice = getComputerChoice();
-  const roundWinner = playRound(playerChoice, computerChoice);
 
-  updateInternalScore(roundWinner);
+  playRound(playerChoice, computerChoice);
   updateIcons(playerChoice, computerChoice);
   updateDisplay(playerChoice, computerChoice);
   updateScoreboard();
