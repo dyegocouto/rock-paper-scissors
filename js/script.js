@@ -1,14 +1,11 @@
+/* DOM */
 const displayTitle = document.querySelector(".display-title");
 const displayPara = document.querySelector(".display-para");
-
 const gameButtons = document.querySelector(".game-buttons");
-
 const playerIcon = document.querySelector("#player-icon");
 const computerIcon = document.querySelector("#computer-icon");
-
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
-
 const modal = document.querySelector(".modal");
 const modalBtn = document.querySelector(".modal-button");
 const modalPara = document.querySelector(".modal-para");
