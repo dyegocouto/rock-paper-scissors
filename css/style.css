@@ -159,6 +159,7 @@ body {
 }
 
 .modal {
+  background-color: #fbfbfb;
   text-align: center;
   border: none;
   border-radius: 5px;
