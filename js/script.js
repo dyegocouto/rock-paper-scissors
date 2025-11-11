@@ -1,6 +1,7 @@
 /* DOM */
 const displayTitle = document.querySelector(".display-title");
 const displayPara = document.querySelector(".display-para");
+const scoreboard = document.querySelector(".scoreboard");
 const gameButtons = document.querySelector(".game-buttons");
 const playerIcon = document.querySelector("#player-icon");
 const computerIcon = document.querySelector("#computer-icon");
@@ -71,9 +72,17 @@ function updateDisplay(playerChoice, computerChoice) {
   }
 }
 
+function animateScoreboard() {
+  scoreboard.classList.remove("bounce");
+  void scoreboard.offsetWidth;
+  scoreboard.classList.add("bounce");
+}
+
 function updateScoreboard() {
   playerScore.textContent = `Player: ${internalScore.player}`;
   computerScore.textContent = `Computer: ${internalScore.computer}`;
+
+  animateScoreboard();
 }
 
 function endGame() {
