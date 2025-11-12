@@ -111,6 +111,11 @@ function handleClick(e) {
   updateIcons(playerChoice, computerChoice);
   updateDisplay(playerChoice, computerChoice);
   updateScoreboard();
+
+  if (isGameOver()) {
+    endGame();
+    return;
+  }
 }
 
 function resetInternalScore() {
