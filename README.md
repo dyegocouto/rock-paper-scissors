@@ -1,5 +1,7 @@
 # Rock Paper Scissors
 
+![](showcase.png)
+
 - Minimalist design
 - Dynamic layout, fits any screen size
 - Vanilla JS and CSS, no frills
